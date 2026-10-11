@@ -1,0 +1,6 @@
+{
+  "name": "Cuestionario de Intereses",
+  "description": "Cuestionario público, elegante y minimalista sobre nombre, edad y gustos, conectado en tiempo real con Firebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

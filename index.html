@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var _f = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return _f; },
+            set: function(val) { _f = val; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (err) {}
+
+        window.addEventListener('error', function(evt) {
+          if (evt && evt.message && evt.message.indexOf('fetch of #<Window>') !== -1) {
+            if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
+            if (evt.preventDefault) evt.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diseñemos tu Sitio Web — [ 102 Studio ]</title>
+    <meta name="description" content="Brief y cuestionario de proyecto web para [ 102 Studio ] Web Development." />
+    <meta property="og:title" content="Diseñemos tu Sitio Web — [ 102 Studio ]" />
+    <meta property="og:description" content="Brief y cuestionario de proyecto web para [ 102 Studio ] Web Development." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-100 selection:text-sky-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
